@@ -557,6 +557,176 @@ Headphones      1   3   ₹14950.00
 
 ---
 
+## 🔬 MANDATORY PRACTICAL EXPERIMENTS
+
+### ✅ **Experiment 18: JavaScript Program to Create Countdown Timer**
+
+**MANDATORY PRACTICAL REQUIREMENT:** Official Experiment #18 (Unit 4)
+
+Create a countdown timer that starts at N seconds and counts down to zero, displaying remaining time.
+
+<details>
+<summary><b>Solution: Method 1 - Using setInterval Loop</b></summary>
+
+```javascript
+/*
+ * Experiment 18: Countdown Timer (Using setInterval)
+ * Counts down from N seconds to 0
+ */
+
+function countdownTimer(seconds) {
+    let remaining = seconds;
+    
+    console.log("Starting countdown from " + seconds + " seconds...\n");
+    
+    const intervalId = setInterval(function() {
+        // Calculate minutes and seconds
+        const mins = Math.floor(remaining / 60);
+        const secs = remaining % 60;
+        
+        // Pad with zeros for display
+        const displayMins = mins < 10 ? "0" + mins : mins;
+        const displaySecs = secs < 10 ? "0" + secs : secs;
+        
+        // Display countdown
+        console.log("Time remaining: " + displayMins + ":" + displaySecs);
+        
+        // Decrement counter
+        remaining--;
+        
+        // Stop when reaching 0
+        if (remaining < 0) {
+            clearInterval(intervalId);
+            console.log("\n⏰ Time's up!");
+        }
+    }, 1000);  // Update every 1000 milliseconds (1 second)
+}
+
+// TEST CASES
+console.log("--- Test Case 1: 10 seconds ---");
+countdownTimer(10);
+
+// Test Case 2: 25 seconds (would show as 00:25)
+// countdownTimer(25);
+
+// Test Case 3: 1 minute 30 seconds (90 seconds)
+// countdownTimer(90);
+```
+
+**Output Example:**
+```
+--- Test Case 1: 10 seconds ---
+Starting countdown from 10 seconds...
+
+Time remaining: 00:10
+Time remaining: 00:09
+Time remaining: 00:08
+Time remaining: 00:07
+Time remaining: 00:06
+Time remaining: 00:05
+Time remaining: 00:04
+Time remaining: 00:03
+Time remaining: 00:02
+Time remaining: 00:01
+
+⏰ Time's up!
+```
+
+</details>
+
+<details>
+<summary><b>Solution: Method 2 - Using setTimeout (Recursive)</b></summary>
+
+```javascript
+/*
+ * Experiment 18: Countdown Timer (Using setTimeout recursively)
+ * Cleaner approach with recursive function
+ */
+
+function countdownTimer(seconds) {
+    function tick(remaining) {
+        if (remaining >= 0) {
+            // Calculate minutes and seconds
+            const mins = Math.floor(remaining / 60);
+            const secs = remaining % 60;
+            
+            // Format with leading zeros
+            const displayMins = String(mins).padStart(2, '0');
+            const displaySecs = String(secs).padStart(2, '0');
+            
+            // Display
+            if (remaining === seconds) {
+                console.log("Starting countdown from " + seconds + " seconds...\n");
+            }
+            console.log("Time remaining: " + displayMins + ":" + displaySecs);
+            
+            // Schedule next tick
+            if (remaining > 0) {
+                setTimeout(() => tick(remaining - 1), 1000);
+            } else {
+                console.log("\n⏰ Time's up!");
+            }
+        }
+    }
+    
+    tick(seconds);
+}
+
+// TEST CASES
+console.log("--- Test Case 1: 5 seconds ---");
+countdownTimer(5);
+
+// Test Case 2: 65 seconds (1 min 5 sec)
+// countdownTimer(65);
+
+// Can also use with stopwatch format
+function timerWithMessage(seconds, message) {
+    function tick(remaining) {
+        const mins = Math.floor(remaining / 60);
+        const secs = remaining % 60;
+        const display = String(mins).padStart(2, '0') + ":" + String(secs).padStart(2, '0');
+        
+        console.log(display + " - " + message);
+        
+        if (remaining > 0) {
+            setTimeout(() => tick(remaining - 1), 1000);
+        } else {
+            console.log("✓ " + message + " completed!");
+        }
+    }
+    tick(seconds);
+}
+
+// Usage example  
+// timerWithMessage(10, "Studying");
+```
+
+**Output Example:**
+```
+--- Test Case 1: 5 seconds ---
+Starting countdown from 5 seconds...
+
+Time remaining: 00:05
+Time remaining: 00:04
+Time remaining: 00:03
+Time remaining: 00:02
+Time remaining: 00:01
+
+⏰ Time's up!
+```
+
+</details>
+
+**Key Learning Points:**
+- `setInterval()` (Method 1) runs code repeatedly at fixed intervals
+- `setTimeout()` (Method 2) schedules code to run once, after delay
+- `clearInterval()` stops a repeating interval
+- `padStart()` or manual padding adds leading zeros for formatting
+- `Math.floor()` converts seconds to minutes
+- Method 2 is cleaner and more flexible
+
+---
+
 ## 🎯 Week 4 Concepts Integrated
 
 ✅ **map()** - Enriching transactions with calculated fields
@@ -564,6 +734,7 @@ Headphones      1   3   ₹14950.00
 ✅ **reduce()** - Aggregating totals and grouping data
 ✅ **sort()** - Ranking by revenue
 ✅ **Date handling** - Analyzing date-based trends
+✅ **Timers** - Scheduling and countdown operations
 ✅ **Array methods** - Merging, deduplicating, sorting objects
 
 ---
