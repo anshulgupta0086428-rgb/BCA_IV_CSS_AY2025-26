@@ -721,6 +721,80 @@ Each student should complete:
 
 ---
 
+## 📖 Week 5 Terminology Reference
+
+This table lists all technical terms introduced in Week 5, when they were first defined, and their definitions.
+
+| Term | Day Introduced | Definition | Example |
+|------|----------------|------------|---------|
+| **Class** | Day 1 | Blueprint/template for creating objects | `class Car { ... }` |
+| **Constructor** | Day 1 | Special method that runs when creating new instance | `constructor(name) { ... }` |
+| **Instance** | Day 1 | Individual object created from a class | `const myCar = new Car()` |
+| **Method** (OOP) | Day 1 | Function belonging to a class, defines behavior | `accelerate() { ... }` |
+| **Property** (OOP) | Day 1 | Variable belonging to a class, holds data | `this.speed = 0` |
+| **Prototype** | Day 1 | Hidden link to another object for property lookup | Every object has a prototype |
+| **Prototype chain** | Day 1 | Series of prototype links for property lookup | Instance → Class.prototype → Object.prototype |
+| **Syntactic sugar** | Day 1 | Cleaner syntax for existing functionality | Classes are sugar over prototypes |
+| **Encapsulation** | Day 1 | Bundling data and methods, controlling access | Private fields with `#` |
+| **Extends** | Day 2 | Keyword creating parent-child class relationship | `class Dog extends Animal` |
+| **Override** | Day 2 | Child method replacing parent method | Child's method used instead |
+| **Super** | Day 2 | Keyword accessing parent class | `super()` or `super.method()` |
+| **Inheritance** | Day 2 | Class inheriting from another class | Reuse code through hierarchy |
+| **Polymorphism** | Day 2 | Same interface, different behavior | `area()` in different shapes |
+| **Abstract class** | Day 2 | Template class never instantiated directly | Force method implementation |
+| **Symbol** | Day 2 | Unique, immutable primitive for property keys | `Symbol("description")` |
+| **Iterator** | Day 2 | Object providing sequential access with `next()` | Makes `for...of` work |
+| **Instanceof** | Day 2 | Operator testing object's class membership | `obj instanceof Class` |
+| **Optional chaining** | Day 3 | Safe nested property access with `?.` | `obj?.prop?.nested` |
+| **Nullish coalescing** | Day 3 | Default value for null/undefined with `??` | `value ?? "default"` |
+
+---
+
+## 🗺️ Week 5 Content Organization Map
+
+Understanding how each day's content connects:
+
+```
+Day 1: OOP Fundamentals & Classes
+    ↓ Foundation: Classes, constructors, instances
+    ├─→ Class syntax and structure
+    ├─→ Prototypes under the hood
+    ├─→ Encapsulation patterns
+    └─→ Private fields (#) and getters/setters
+
+Day 2: Inheritance & Polymorphism
+    ↓ Build on: Classes from Day 1
+    ├─→ Extends and super keywords
+    ├─→ Method overriding
+    ├─→ Polymorphism patterns
+    ├─→ Symbols and iterators
+    └─→ Instanceof operator
+
+Day 3: File Operations (Experiments 23-24)
+    ↓ Practical Application: Using OOP concepts
+    ├─→ File extension handling
+    ├─→ Type checking patterns
+    ├─→ Optional chaining
+    ├─→ Nullish coalescing
+    └─→ Final 2 experiments
+
+Days 4-5: OOP Integration Project
+    ↓ Synthesize: Everything from Week 5 + prior weeks
+    ├─→ Complete file management system
+    ├─→ Multiple class hierarchies
+    ├─→ All array methods (map, filter, reduce)
+    ├─→ String operations and validation
+    └─→ Professional error handling
+```
+
+**Key Progression:**
+1. **Learn OOP fundamentals** (Day 1): Classes, instances, encapsulation
+2. **Add complexity** (Day 2): Inheritance, polymorphism, advanced features
+3. **Apply to real problems** (Day 3): File operations with type safety
+4. **Integrate everything** (Days 4-5): Complete OOP application
+
+---
+
 ## ✅ COMPLETE COURSE CHECKLIST
 
 **Curriculum Content:** 100% ✅

@@ -94,6 +94,10 @@ console.log(count);               // 0 (0 is not nullish)
 
 ### 4. Safe Property Access
 
+**Optional chaining** (operator `?.`): A safe way to access nested properties that might not exist. If any part of the chain is `null` or `undefined`, the entire expression short-circuits and returns `undefined` instead of throwing an error. Syntax: `object?.property` or `object?.method()`. This prevents "Cannot read property of undefined" errors.
+
+**Nullish coalescing** (operator `??`): An operator that provides a default value when the left side is `null` or `undefined`. Unlike `||` (which treats 0, "", and false as falsy), `??` only treats `null` and `undefined` as "nullish." Syntax: `value ?? defaultValue`. Example: `count ?? 0` returns 0 only if count is null or undefined, not if it's 0.
+
 ```javascript
 // Accessing nested properties can throw errors
 const user = { name: "Alice", address: { city: "NY" } };

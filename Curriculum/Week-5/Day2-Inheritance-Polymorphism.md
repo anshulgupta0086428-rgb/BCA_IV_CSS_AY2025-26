@@ -10,6 +10,10 @@
 
 ### 1. Inheritance Basics
 
+**Extends** (keyword): The `extends` keyword creates a parent-child relationship between classes. When you write `class Dog extends Animal`, you're saying that `Dog` is a specialized type of `Animal` and inherits all of Animal's properties and methods. The child class (Dog) is called the "derived class" or "subclass," and the parent class (Animal) is the "base class" or "superclass."
+
+**Override**: When a child class defines a method with the same name as a method in the parent class, the child's version replaces (overrides) the parent's version for instances of the child class. This allows child classes to provide specialized behavior while keeping the same interface. The parent class method still exists and is unchanged for other uses.
+
 **Inheritance** allows a class to inherit properties and methods from another class.
 
 ```javascript
@@ -98,6 +102,12 @@ console.log(d.toString());  // "an animal (specifically a dog)"
 
 ### 2. super Keyword
 
+**Super** (keyword): A special keyword used inside a child class to access the parent class. It has two main uses:
+1. `super()` calls the parent class's constructor (required in child constructors before using `this`)
+2. `super.methodName()` calls a method from the parent class, allowing you to extend (not just replace) parent functionality
+
+Without `super`, you couldn't access the parent's methods when you've overridden them in the child.
+
 **super** calls methods or constructor from parent class.
 
 ```javascript
@@ -183,6 +193,8 @@ for (let shape of shapes) {
 
 ### 4. The instanceof Operator
 
+**Instanceof** (operator): An operator that tests whether an object belongs to a specific class or any class in its inheritance chain. It returns `true` if the object was created by that class (or inherits from it), and `false` otherwise. Syntax: `object instanceof ClassName`. This is different from `typeof`, which returns the primitive type as a string.
+
 The **`instanceof`** operator tests whether an object was created by a particular class (or any class in its inheritance chain). It returns `true` or `false`.
 
 ```javascript
@@ -256,6 +268,8 @@ console.log(processInput(42));                  // "Unknown type: number"
 
 ### 5. Abstract Classes Pattern
 
+**Abstract class**: A class that serves as a template for other classes but is never instantiated directly. Abstract classes define a common interface (methods that must be implemented) but leave the actual implementation to child classes. JavaScript doesn't have built-in abstract classes (unlike Java or C++), but we can simulate them by throwing errors if methods aren't overridden or if the abstract class is instantiated directly.
+
 JavaScript doesn't have true abstract classes, but we can simulate them:
 
 ```javascript
@@ -300,6 +314,8 @@ for (let processor of processors) {
 ---
 
 ### 6. Symbols
+
+**Symbol**: A unique, immutable primitive data type in JavaScript. Every Symbol is different from every other Symbol (even with the same description), making them ideal for creating property keys that won't conflict with other properties. Symbols are useful when you need to add properties to objects without risking name collisions with existing or future properties.
 
 A **Symbol** is a primitive data type (like number, string, or boolean) that is guaranteed to be **unique**. Every Symbol you create is different from every other Symbol, even if they have the same description.
 
@@ -377,6 +393,8 @@ console.log(price + 50);    // 150       (default hint → number)
 ---
 
 ### 7. The Iterator Interface
+
+**Iterator**: An object that provides a way to access elements of a collection one at a time through a standardized interface. An iterator has a `next()` method that returns an object with two properties: `value` (the current element) and `done` (true when there are no more elements). Iterators make objects work with `for...of` loops and other iteration features.
 
 An **iterator** is an object that provides a way to access elements one at a time, in sequence. The **iterator interface** is the protocol (set of rules) that JavaScript uses to make objects work with `for...of` loops and the spread operator `[...obj]`.
 

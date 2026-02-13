@@ -45,6 +45,18 @@ class Person {
 
 ### 2. Understanding ES6 Classes
 
+Before diving into classes, let's define the key terms:
+
+**Class**: A blueprint or template for creating objects. A class defines what properties (data) and methods (behaviors) objects created from it will have. Think of a class as a cookie cutter — it defines the shape, but you use it to create many actual cookies (objects). In JavaScript, classes are created using the `class` keyword.
+
+**Constructor**: A special method that runs automatically when you create a new instance of a class. The constructor initializes the object's properties with starting values. In JavaScript, it's defined using the `constructor()` method inside a class.
+
+**Instance**: An individual object created from a class. If the class is the blueprint, the instance is the actual building. You create an instance using the `new` keyword: `const myCar = new Car()`. Each instance has its own values for properties but shares the methods defined in the class.
+
+**Method** (in OOP context): A function that belongs to a class and defines a behavior that objects of that class can perform. Methods operate on the object's data (properties). For example, a `Car` class might have an `accelerate()` method.
+
+**Property** (in OOP context): A variable that belongs to a class and holds data about an object. Properties define the state or characteristics of an object. For example, a `Car` class might have properties like `brand`, `model`, and `speed`.
+
 **Syntax:**
 ```javascript
 class ClassName {
